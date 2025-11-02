@@ -209,7 +209,6 @@ p {
 
 @media only screen and (min-width: 768px) {
   .contacts-link {
-    padding: 16px 0;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
@@ -254,9 +253,6 @@ p {
 
 /*#region Hero section styles */
 
-.hero-container {
-}
-
 .hero {
   background-color: #2e2f42;
   color: #ffffff;
@@ -267,8 +263,8 @@ p {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/bg/bg_mob.jpg);
-  max-width: 1440px;
-  max-height: 600px;
+  max-width: 320px;
+  max-height: 432px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -293,6 +289,8 @@ p {
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/bg/bg_tab.jpg);
+    max-width: 768px;
+    max-height: 436px;
   }
   @media (min-resolution: 192dpi) {
     .hero {
@@ -314,15 +312,17 @@ p {
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/bg/bg_dsk.jpg);
+    max-width: 1440px;
+    max-height: 600px;
   }
-}
-@media (min-resolution: 192dpi) {
-  .hero {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url(../images/bg/bg_dsk@2x.jpg);
+  @media (min-resolution: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/bg/bg_dsk@2x.jpg);
+    }
   }
 }
 
@@ -385,13 +385,14 @@ p {
 
 /*#region Excellence section styles */
 
-.excel-list {
-}
-
 .excel-item {
-  max-width: 288px;
+  padding-bottom: 72px;
 }
-
+@media only screen and (max-width: 767px) {
+  .excel-item {
+    max-width: 288px;
+  }
+}
 .excel-title {
   font-weight: 700;
   font-size: 36px;
@@ -408,11 +409,10 @@ p {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  margin-bottom: 72px;
 }
 
-.excel-text:not(:last-child) {
-  margin-bottom: 0;
+.excel-item:last-child {
+  padding-bottom: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -422,7 +422,7 @@ p {
   .excel-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px 72px;
+    gap: 72px 24px;
   }
 
   .excel-item {
@@ -651,8 +651,6 @@ p {
 
 .portf-item:hover .overlay-text {
   transform: translateY(0%);
-
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portf-wrapper {
@@ -817,8 +815,6 @@ p {
 /* #endregion Footer styles */
 
 /* #region footer input */
-.footer-input-wrapper {
-}
 
 .footer-label-input {
   display: flex;
@@ -938,7 +934,7 @@ p {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media only screen and (min-width: 758px) {
+@media only screen and (min-width: 768px) {
   .modal {
     width: 408px;
     min-height: 584px;
@@ -1078,7 +1074,15 @@ p {
 .agreement {
   margin-bottom: 24px;
 }
+
+.agreement-column {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 .label-agreement {
+  display: flex;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
@@ -1089,6 +1093,7 @@ p {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 16px;
   height: 16px;
   border-radius: 2px;
@@ -1099,8 +1104,6 @@ p {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.icon-vector {
 }
 
 input[type='checkbox']:checked + .label-agreement > .agreement-checkbox {
@@ -1139,11 +1142,14 @@ input[type='checkbox']:checked + .label-agreement > .agreement-checkbox {
 }
 
 .mobile-menu-container {
+  margin: 0 auto;
+  position: relative;
   display: flex;
   flex-direction: column;
+  max-width: 320px;
   height: 100%;
 
-  padding: 72px 16px 40px;
+  padding: 72px 24px 40px 16px;
 }
 
 .mobile-close-btn {
@@ -1160,7 +1166,8 @@ input[type='checkbox']:checked + .label-agreement > .agreement-checkbox {
   height: 24px;
 }
 
-.icon-close-mobile {
+.burger-nav {
+  margin-bottom: auto;
 }
 
 .burger-nav-list {
@@ -1168,8 +1175,6 @@ input[type='checkbox']:checked + .label-agreement > .agreement-checkbox {
   font-size: 36px;
   line-height: 1.11;
   letter-spacing: 0.02em;
-
-  margin-bottom: auto;
 }
 
 .burger-nav-list .burger-nav-item:not(:last-child) {
@@ -1184,8 +1189,12 @@ input[type='checkbox']:checked + .label-agreement > .agreement-checkbox {
   color: #404bbf;
 }
 
-.burger-contacts-list {
+.burger-contacts {
   margin-bottom: 48px;
+  font-style: normal;
+}
+
+.burger-contacts-list {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
