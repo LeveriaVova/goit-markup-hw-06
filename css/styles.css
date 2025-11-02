@@ -386,7 +386,7 @@ p {
 /*#region Excellence section styles */
 
 .excel-item {
-  padding-bottom: 72px;
+  margin-bottom: 72px;
 }
 @media only screen and (max-width: 767px) {
   .excel-item {
@@ -412,7 +412,7 @@ p {
 }
 
 .excel-item:last-child {
-  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -427,6 +427,7 @@ p {
 
   .excel-item {
     width: calc((100% - 24px) / 2);
+    margin: 0;
   }
 }
 
@@ -763,6 +764,7 @@ p {
   }
 }
 .footer-text-link {
+  text-align: center;
   font-weight: 500;
   color: #fff;
   margin-bottom: 16px;
